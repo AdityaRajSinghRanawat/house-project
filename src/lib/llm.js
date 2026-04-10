@@ -8,7 +8,7 @@ import { HumanMessage } from "@langchain/core/messages";
 
 export const analyzeComplaint = async (text, propertyName) => {
   // 1. Try to use real AI if API key is configured
-  const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+  const apiKey = import.meta.env.VITE_GOOGLE_API_KEY?.trim();
   
   if (apiKey) {
     try {
